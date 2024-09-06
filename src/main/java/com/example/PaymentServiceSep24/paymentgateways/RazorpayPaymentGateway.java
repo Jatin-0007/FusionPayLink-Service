@@ -9,7 +9,7 @@ import com.razorpay.RazorpayClient;
 import com.razorpay.PaymentLink;
 
 @Component //need object of this class
-@Primary
+
 public class RazorpayPaymentGateway implements PaymentGateway {
 
     private RazorpayClient razorpay;
@@ -30,7 +30,7 @@ public class RazorpayPaymentGateway implements PaymentGateway {
         paymentLinkRequest.put("currency","INR");
        // paymentLinkRequest.put("accept_partial",true);
      //   paymentLinkRequest.put("first_min_partial_amount",100);
-        paymentLinkRequest.put("expire_by",1725493112); // time to pay in this limit Epoch timestamp format
+        paymentLinkRequest.put("expire_by",1725580690); // time to pay in this limit Epoch timestamp format
         paymentLinkRequest.put("reference_id",orderID.toString());
         paymentLinkRequest.put("description","Payment for order id: "+orderID.toString());
         JSONObject customer = new JSONObject();

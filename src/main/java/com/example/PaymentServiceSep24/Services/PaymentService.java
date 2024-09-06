@@ -2,6 +2,7 @@ package com.example.PaymentServiceSep24.Services;
 
 import com.example.PaymentServiceSep24.paymentgateways.PaymentGateway;
 
+import com.stripe.exception.StripeException;
 import org.springframework.stereotype.Service;
 
 import com.razorpay.RazorpayException;
@@ -15,7 +16,7 @@ public class PaymentService {
         this.paymentGateway = paymentGateway;
     }
 
-    public String createPaymentLink(Long orderId) throws RazorpayException {
+    public String createPaymentLink(Long orderId) throws RazorpayException, StripeException {
         //call the Razorpay/Stripe PG tp generate the payment link.
 
         return paymentGateway.createPaymentLink(orderId) ;
